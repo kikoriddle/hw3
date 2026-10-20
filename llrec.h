@@ -51,7 +51,7 @@ void llpivot(Node *&head, Node *&smaller, Node *&larger, int pivot);
 
 /**
  * Given a linked list pointed to by head, removes (filters out) nodes
- * whose value does not meet the criteria given by the predicate
+ * whose value es not meet the criteria given by the predicate
  * function object, pred (i.e. pred should be a function object that implements
  * `bool operator()(int value)` and returns *true*  items that should
  * be *removed/filtered*.  Removed items should be deallocated.
