@@ -1,6 +1,7 @@
 #ifndef EVENT_H
 #define EVENT_H
 #include "wire.h"
+#include <cstdint>
 
 struct Event
 {
@@ -11,6 +12,9 @@ struct Event
 
 typedef struct EventLess {
         //write the operator() required to make this a functor that compares Events by time
+  bool operator()(const Event* a, const Event* b) const {
+    return a->time < b->time;
+  }
 } EventLess;
 	
 #endif

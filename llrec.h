@@ -83,8 +83,20 @@ Node* llfilter(Node* head, Comp pred)
     //*********************************************
     // Provide your implementation below
     //*********************************************
+  if (head == NULL) return NULL;
 
+  //filter the linekd list
+  Node* list = llfilter(head->next, pred);
 
+  if(pred(head->val))
+  {
+    //if bool is true then delte the node
+    delete head;
+    return list;
+  }
+
+  head->next = list;
+  return head;
 }
 
 #endif

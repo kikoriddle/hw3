@@ -67,9 +67,11 @@ void dealloc(Node* head)
 //   function object struct declarations
 // -----------------------------------------------
 
-
-
-
+struct IsOdd {
+    bool operator()(int x) const {
+        return x % 2 != 0;
+    }
+};
 
 int main(int argc, char* argv[])
 {
@@ -86,9 +88,15 @@ int main(int argc, char* argv[])
     print(head);
 
     // Test out your linked list code
+     Node* list2 = readList(argv[1]);
+    cout << "List before filter: ";
+    print(list2);
 
-
-
+    list2 = llfilter(list2, IsOdd());
+    cout << "After filtering odd values: ";
+    print(list2);
+    
+    dealloc(list2);
     
     return 0;
 
