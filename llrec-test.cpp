@@ -97,6 +97,7 @@ int main(int argc, char* argv[])
     print(list2);
     
     dealloc(list2);
+    dealloc(head);
     
     return 0;
 
